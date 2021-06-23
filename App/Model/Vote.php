@@ -21,11 +21,10 @@ class Vote {
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
-    public static function  totalVotes($id) {
+    public static function  totalVotes() {
         $con = Connection::db();
         $query = 'select sum(votes) as total from candidates';
         $stmt = $con->prepare($query);
-        $stmt->bindValue('id', $id);
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }

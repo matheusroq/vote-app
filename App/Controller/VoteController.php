@@ -22,7 +22,7 @@ class VoteController {
     public function showVotes() {
         session_start();
         $votesPerCandidate = Vote::votePerCandidate($_GET['id']);
-        $totalVotes = Vote::totalVotes($_GET['id']);
+        $totalVotes = Vote::totalVotes();
 
         $_SESSION['votes'] = $votesPerCandidate;
         $_SESSION['total'] = $totalVotes;
