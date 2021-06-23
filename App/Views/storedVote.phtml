@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored vote!</title>
+    <link rel="stylesheet" href="../../public/css/storedPage.css">
+</head>
+<body>
+    <div id="container">
+        <h1> Your vote was stored. Thank you!</h1>
+
+        
+        <div id="info-box">
+            <h2>Your candidate: </h4>
+            <h3><?= $_SESSION['votes']['name'] ?></h3>
+            <h3><?= round(($_SESSION['votes']['votes'] / $_SESSION['total']['total']) * 100)?>%</h3>
+        
+        </div>
+
+        <a href="/">Vote again</a> 
+    </div>
+    
+    
+</body>
+</html>

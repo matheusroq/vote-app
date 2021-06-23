@@ -1,0 +1,23 @@
+* {
+    background-color: #222;
+}
+
+#container {
+    background-color: #fff;
+    margin: 50px 50px;
+    border: 3px solid #111;
+}
+
+#container a {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #222;
+    padding: 20px;
+}
+
+#container a:hover{
+    background-color:#ccc;
+    color: #fff;
+}
