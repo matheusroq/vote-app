@@ -1,7 +1,8 @@
 {
     "name": "vendor/vote-app",
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "illuminate/database": "^8.48"
     },
     "authors": [
         {
@@ -11,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "App/",
-            "Init\\": "vendor/Init"
+            "Init\\": "vendor/Init",
+            "Config\\": "Config/"
         }
     }
 }

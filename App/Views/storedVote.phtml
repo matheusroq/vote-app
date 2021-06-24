@@ -14,9 +14,10 @@
         
         <div id="info-box">
             <h2>Your candidate: </h4>
-            <h3><?= $_SESSION['votes']['name'] ?></h3>
-            <h3><?= round(($_SESSION['votes']['votes'] / $_SESSION['total']['total']) * 100)?>%</h3>
-        
+           
+                
+                <h3><?= $_SESSION['votes'][0] ?></h3>
+                <h3><?= round($_SESSION['votes'][1] / $_SESSION['total'] * 100) ?>%</h3>
         </div>
 
         <a href="/">Vote again</a> 

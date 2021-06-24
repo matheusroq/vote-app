@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Config\DB;
+
 class HomeController {
 
     public function index() {

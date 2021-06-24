@@ -2,30 +2,35 @@
 
 namespace App\Model;
 use App\Connection;
+use Config\DB;
+
 
 class Vote {
     public static function vote() {
-        $con = Connection::db();
-        $query = 'update candidates set votes = votes + 1 where id = :id ';
-        $stmt = $con->prepare($query);
-        $stmt->bindValue('id', $_GET['id']);
-        $stmt->execute();
+        DB::db()->table('candidates')
+                ->where('id', $_GET['id'])
+                ->increment('votes', 1);
         return true;
     }
 
     public static function votePerCandidate($id) {
-        $con = Connection::db();
-        $query = 'select name, votes from candidates where id = :id';
-        $stmt = $con->prepare($query);
-        $stmt->bindValue('id', $id);
-        $stmt->execute();
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+       $votePerCandidate= DB::db()->table('candidates')
+                ->select('name', 'votes')
+                ->where('id', $id)
+                ->get();
+        $candidateInfo = [];
+                foreach($votePerCandidate as $candidate) {
+          
+                    $candidateInfo[] = $candidate->name;
+                    $candidateInfo[] = $candidate->votes;
+                }
+
+                return $candidateInfo;
     }
     public static function  totalVotes() {
-        $con = Connection::db();
-        $query = 'select sum(votes) as total from candidates';
-        $stmt = $con->prepare($query);
-        $stmt->execute();
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        $total = DB::db()->table('candidates')
+                ->sum('votes');
+        return $total;
+
     }
 }

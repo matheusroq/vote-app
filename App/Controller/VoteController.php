@@ -15,7 +15,7 @@ class VoteController {
     }
 
     public function vote() {
-        Vote::vote();
+       Vote::vote();
         $this->showVotes();
     }
 
