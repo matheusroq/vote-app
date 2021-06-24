@@ -6,7 +6,7 @@ use Config\DB;
 
 class HomeController {
 
-    public function index() {
-        require "App/Views/vote.phtml";
+    public function home() {
+        require "App/Views/home.phtml";
     }
 }

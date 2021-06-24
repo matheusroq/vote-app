@@ -10,7 +10,7 @@ class Route extends Bootstrap {
         $routes['home'] = [
             'route' => '/',
             'controller' => 'home',
-            'action' => 'index'
+            'action' => 'home'
         ];
         $routes['vote'] = [
             'route' => '/vote',
