@@ -17,6 +17,11 @@ class Route extends Bootstrap {
             'controller' => 'vote',
             'action' => 'vote'
         ];
+        $routes['table'] = [
+            'route' => '/create',
+            'controller' => 'table',
+            'action' => 'createTable'
+        ];
        $this->__set('routes', $routes);
     }
 }

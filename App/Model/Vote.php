@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Model;
-use App\Connection;
 use Config\DB;
 
 
