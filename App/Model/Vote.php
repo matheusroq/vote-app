@@ -6,7 +6,8 @@ use Config\DB;
 
 class Vote {
     public static function vote() {
-        DB::db()->table($_POST['table_name'])
+        session_start();
+        DB::db()->table($_SESSION['table_name'])
                 ->where('id', $_GET['id'])
                 ->increment('votes', 1);
         return true;

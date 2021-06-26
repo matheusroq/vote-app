@@ -24,7 +24,7 @@ class Route extends Bootstrap {
         ];
         $routes['votePage'] = [
             'route' => '/votePage',
-            'controller' => 'tabela',
+            'controller' => 'table',
             'action' => 'index'
         ];
        $this->__set('routes', $routes);

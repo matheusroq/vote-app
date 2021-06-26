@@ -10,7 +10,7 @@
 <body>
     <div id="container">
 
-    <?php for($i = 0; $i< count($fields); $i++) { ?>
+    <?php for($i = 0; $i< count($fields['id']); $i++) { ?>
         <a href="/vote?id=<?=$fields['id'][$i]?>">Vote for <?= $fields['fields'][$i] ?></a>
    <?php } ?>
     
