@@ -27,6 +27,11 @@ class Route extends Bootstrap {
             'controller' => 'table',
             'action' => 'index'
         ];
+        $routes['error'] = [
+            'route' => '/error',
+            'controller' => 'error',
+            'action' => 'createTableError'
+        ];
        $this->__set('routes', $routes);
     }
 }

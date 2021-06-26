@@ -10,17 +10,15 @@
 <body>
     <div id="container">
         <h1> Your vote was stored. Thank you!</h1>
-
-        
         <div id="info-box">
-            <h2>Your candidate: </h4>
+            <h2>Your choice: </h4>
            
                 
                 <h3><?= $_SESSION['votes'][0] ?></h3>
                 <h3><?= round($_SESSION['votes'][1] / $_SESSION['total'] * 100) ?>%</h3>
         </div>
 
-        <a href="/">Vote again</a> 
+        <a href="/votePage">Vote again</a> 
     </div>
     
     

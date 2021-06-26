@@ -15,6 +15,11 @@
         <div id="form">
             <form action="/create" method="post" id="fields"></form>
         </div>
+        <?php if(isset($error)) { ?>
+            <p id="error"><?= $error ?></p>
+            <button id="btn-try-again"><a href="/">Try again</a></button>
+       <?php } ?>
+        
     </div>
 
     <script src="../../public/js/main.js"></script>

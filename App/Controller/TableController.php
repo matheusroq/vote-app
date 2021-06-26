@@ -5,12 +5,15 @@ use App\Model\Table;
 
 class TableController {
     public function createTable() {
-        Table::create();
-        Table::insertFields();
-        //$this->index();
-        session_start();
-        $_SESSION['table_name'] = $_POST['table_name'];
-        require "App/Views/votePage.phtml";
+        $table = Table::create();
+        if($table == false) {
+            header('Location: /error');
+        } else {
+             Table::insertFields();
+            session_start();
+            $_SESSION['table_name'] = $_POST['table_name'];
+            require "App/Views/votePage.phtml";  
+        }
     }
 
     public function index() {

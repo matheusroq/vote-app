@@ -13,22 +13,22 @@ class Vote {
         return true;
     }
 
-    public static function votePerCandidate($id) {
-       $votePerCandidate= DB::db()->table('candidates')
-                ->select('name', 'votes')
+    public static function votePerCandidate($tableName, $id) {
+       $votePerCandidate= DB::db()->table($tableName)
+                ->select('fields', 'votes')
                 ->where('id', $id)
                 ->get();
         $candidateInfo = [];
                 foreach($votePerCandidate as $candidate) {
           
-                    $candidateInfo[] = $candidate->name;
+                    $candidateInfo[] = $candidate->fields;
                     $candidateInfo[] = $candidate->votes;
                 }
 
                 return $candidateInfo;
     }
-    public static function  totalVotes() {
-        $total = DB::db()->table('candidates')
+    public static function  totalVotes($tableName) {
+        $total = DB::db()->table($tableName)
                 ->sum('votes');
         return $total;
 

@@ -20,8 +20,8 @@ class VoteController {
     }
 
     public function showVotes() {
-        $votesPerCandidate = Vote::votePerCandidate($_GET['id']);
-        $totalVotes = Vote::totalVotes();
+        $votesPerCandidate = Vote::votePerCandidate($_SESSION['table_name'],$_GET['id']);
+        $totalVotes = Vote::totalVotes($_SESSION['table_name']);
 
         $_SESSION['votes'] = $votesPerCandidate;
         $_SESSION['total'] = $totalVotes;
