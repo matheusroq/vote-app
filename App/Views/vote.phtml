@@ -9,10 +9,11 @@
 </head>
 <body>
     <div id="container">
+
+    <?php for($i = 0; $i< count($fields); $i++) { ?>
+        <a href="/vote?id=<?=$fields['id'][$i]?>">Vote for <?= $fields['fields'][$i] ?></a>
+   <?php } ?>
     
-    <a href="/vote?id=1" class="vote">Vote for Candidate 1</a>
-    <a href="/vote?id=2"class="vote">Vote for Candidate 2</a>
-    <a href="/vote?id=3"class="vote">Vote for Candidate 3</a>
     
     </div>
 
